@@ -49,13 +49,7 @@ const Giscus = () => {
     script.setAttribute('crossorigin', 'anonymous')
     script.async = true
 
-    const comments = document.getElementById(COMMENTS_ID)
-    if (comments) comments.appendChild(script)
-
-    return () => {
-      const comments = document.getElementById(COMMENTS_ID)
-      if (comments) comments.innerHTML = ''
-    }
+    ref.current.appendChild(script);
   }, [])
 
   // Reload on theme change
@@ -65,7 +59,7 @@ const Giscus = () => {
       { giscus: { setConfig: { term: router.asPath, theme } } },
       'https://giscus.app'
     )
-  }, [router.asPath])
+  }, [router.asPath, theme])
   // useEffect(() => {
   //   const iframe = document.querySelector('iframe.giscus-frame')
   //   if (!iframe) return
