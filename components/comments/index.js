@@ -1,5 +1,5 @@
 import siteMetadata from '@/data/siteMetadata'
-import Comments from './Comments'
+import GitComment from './GitComment'
 
 import dynamic from 'next/dynamic'
 
@@ -27,7 +27,7 @@ const Comments = ({ frontMatter }) => {
   if (!comment || Object.keys(comment).length === 0) return <></>
   return (
     <div id="comment">
-      {siteMetadata.comment && siteMetadata.comment.provider === 'giscus' && <Comments />}
+      {siteMetadata.comment && siteMetadata.comment.provider === 'giscus' && <GitComment />}
       {siteMetadata.comment && siteMetadata.comment.provider === 'utterances' && (
         <UtterancesComponent />
       )}

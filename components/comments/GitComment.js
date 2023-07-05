@@ -2,7 +2,7 @@ import Giscus from '@giscus/react'
 import { useTheme } from 'next-themes'
 import siteMetadata from '@/data/siteMetadata'
 
-export default function Comments() {
+export default function GitComment() {
   const { theme, resolvedTheme } = useTheme()
   const commentsTheme =
     siteMetadata.comment.giscusConfig.themeURL === ''
