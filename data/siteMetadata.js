@@ -1,5 +1,5 @@
 const siteMetadata = {
-  title: 'Next.js Starter Blog',
+  title: "Wontae's Blog",
   author: 'WONTAE99',
   headerTitle: "WONTAE'S BLOG",
   description: 'A blog created with Next.js and Tailwind.css',
@@ -12,7 +12,7 @@ const siteMetadata = {
   socialBanner: '/static/images/twitter-card.png',
   email: 'address@yoursite.com',
   github: 'https://github.com/wontae99',
-  twitter: 'https://twitter.com/Twitter',
+  twitter: 'https://twitter.com/wontae99',
   facebook: 'https://facebook.com',
   youtube: 'https://youtube.com',
   linkedin: 'https://www.linkedin.com',
