@@ -1,4 +1,5 @@
 import siteMetadata from '@/data/siteMetadata'
+import Comments from './Comments'
 
 import dynamic from 'next/dynamic'
 
