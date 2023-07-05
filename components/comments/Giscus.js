@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useCallback } from 'react'
-import { Giscus as GitComment } from '@giscus/react'
 import { useTheme } from 'next-themes'
 
 import siteMetadata from '@/data/siteMetadata'
@@ -64,23 +63,8 @@ const Giscus = () => {
 
   return (
     <div className="pt-6 pb-6 text-center text-gray-700 dark:text-gray-300">
-      <GitComment
-        id="comments"
-        repo={repo}
-        repoId={repositoryId}
-        category={category}
-        categoryId={categoryId}
-        mapping={mapping}
-        term="Welcome to @giscus/react component!"
-        reactionsEnabled={reactions}
-        emitMetadata={metadata}
-        inputPosition={inputPosition}
-        theme={theme}
-        lang="en"
-        loading="lazy"
-      />
-      {/* {enableLoadComments && <button onClick={LoadComments}>Load Comments</button>}
-      <div className="giscus w-full" id={COMMENTS_ID} /> */}
+      {enableLoadComments && <button onClick={LoadComments}>Load Comments</button>}
+      <div className="giscus w-full" id={COMMENTS_ID} />
     </div>
   )
 }
