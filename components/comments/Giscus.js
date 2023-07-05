@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react'
 import { useTheme } from 'next-themes'
-import Giscus from '@giscus/react'
 
 import siteMetadata from '@/data/siteMetadata'
 
