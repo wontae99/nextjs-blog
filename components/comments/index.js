@@ -11,7 +11,7 @@ const GiscusComponent = dynamic(
   () => {
     return import('@/components/comments/Giscus')
   },
-  { ssr: true }
+  { ssr: false }
 )
 const DisqusComponent = dynamic(
   () => {

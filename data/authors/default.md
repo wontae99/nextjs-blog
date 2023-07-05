@@ -1,5 +1,5 @@
 ---
-name: WONTAE JUN
+name: WONTAE
 avatar: /static/images/profile.jpg
 occupation: Studying development
 company: Looking for a job now.

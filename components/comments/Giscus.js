@@ -1,9 +1,11 @@
 import React, { useState, useEffect, useCallback } from 'react'
 import { useTheme } from 'next-themes'
+import { useRouter } from 'next/router'
 
 import siteMetadata from '@/data/siteMetadata'
 
 const Giscus = () => {
+  const router = useRouter()
   const [enableLoadComments, setEnabledLoadComments] = useState(true)
   const { theme, resolvedTheme } = useTheme()
   const commentsTheme =
@@ -56,15 +58,22 @@ const Giscus = () => {
 
   // Reload on theme change
   useEffect(() => {
-    const iframe = document.querySelector('iframe.giscus-frame')
-    if (!iframe) return
-    LoadComments()
-  }, [LoadComments])
+    const iframe = document.querySelector < HTMLIFrameElement > 'iframe.giscus-frame'
+    iframe?.contentWindow?.postMessage(
+      { giscus: { setConfig: { term: router.asPath } } },
+      'https://giscus.app'
+    )
+  }, [router.asPath])
+  // useEffect(() => {
+  //   const iframe = document.querySelector('iframe.giscus-frame')
+  //   if (!iframe) return
+  //   LoadComments()
+  // }, [LoadComments])
 
   return (
     <div className="pt-6 pb-6 text-center text-gray-700 dark:text-gray-300">
-      {enableLoadComments && <button onClick={LoadComments}>Load Comments</button>}
-      <div className="giscus" id={COMMENTS_ID} />
+      {/* {enableLoadComments && <button onClick={LoadComments}>Load Comments</button>} */}
+      <div className="giscus w-full" id={COMMENTS_ID} />
     </div>
   )
 }
