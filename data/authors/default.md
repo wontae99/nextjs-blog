@@ -1,16 +1,16 @@
 ---
-name: Tails Azimuth
-avatar: /static/images/avatar.png
-occupation: Professor of Atmospheric Science
-company: Stanford University
-email: address@yoursite.com
-twitter: https://twitter.com/Twitter
+name: WONTAE JUN
+avatar: /static/images/profile.png
+occupation: Studying development
+company: Looking for a job now.
+email: jwt3493@naver.com
+twitter: https://twitter.com/wontae99
 linkedin: https://www.linkedin.com
-github: https://github.com
+github: https://github.com/wontae99
 ---
 
-Tails Azimuth is a professor of atmospheric sciences at the Stanford AI Lab. His research interests includes complexity modelling of tailwinds, headwinds and crosswinds.
+Graduated from Electric Engineering of SoogSil Univ. (2015.03 ~ 2022.03)
 
-He leads the clean energy group which develops 3D air pollution-climate models, writes differential equation solvers, and manufactures titanium plated air ballons. In his free time he bakes raspberry pi.
+Studying development. (especially front-end)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate.
+Tech Stack: Python, Javascript, React, React-Native, NextJS, MongoDB, Typescript.
