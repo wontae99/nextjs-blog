@@ -5,7 +5,7 @@ import { useRouter } from 'next/router'
 import siteMetadata from '@/data/siteMetadata'
 
 const Giscus = () => {
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef(null)
   const router = useRouter()
 
   const { theme, resolvedTheme } = useTheme()
@@ -19,7 +19,7 @@ const Giscus = () => {
   const COMMENTS_ID = 'comments-container'
 
   useEffect(() => {
-    if (!ref.current || ref.current.hasChildNodes()) return;
+    if (!ref.current || ref.current.hasChildNodes()) return
 
     const {
       repo,
@@ -35,7 +35,7 @@ const Giscus = () => {
 
     const script = document.createElement('script')
     script.src = 'https://giscus.app/client.js'
-    scriptElem.async = true;
+    scriptElem.async = true
     script.setAttribute('data-repo', repo)
     script.setAttribute('data-repo-id', repositoryId)
     script.setAttribute('data-category', category)
@@ -56,13 +56,13 @@ const Giscus = () => {
       const comments = document.getElementById(COMMENTS_ID)
       if (comments) comments.innerHTML = ''
     }
-  }, [commentsTheme])
+  }, [])
 
   // Reload on theme change
   useEffect(() => {
     const iframe = document.querySelector < HTMLIFrameElement > 'iframe.giscus-frame'
     iframe?.contentWindow?.postMessage(
-      { giscus: { setConfig: { term: router.asPath } } },
+      { giscus: { setConfig: { term: router.asPath, theme } } },
       'https://giscus.app'
     )
   }, [router.asPath])
