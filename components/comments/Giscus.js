@@ -18,20 +18,20 @@ const Giscus = () => {
 
   const COMMENTS_ID = 'comments-container'
 
+  const {
+    repo,
+    repositoryId,
+    category,
+    categoryId,
+    mapping,
+    reactions,
+    metadata,
+    inputPosition,
+    lang,
+  } = siteMetadata?.comment?.giscusConfig
+
   useEffect(() => {
     if (!ref.current || ref.current.hasChildNodes()) return
-
-    const {
-      repo,
-      repositoryId,
-      category,
-      categoryId,
-      mapping,
-      reactions,
-      metadata,
-      inputPosition,
-      lang,
-    } = siteMetadata?.comment?.giscusConfig
 
     const script = document.createElement('script')
     script.src = 'https://giscus.app/client.js'
@@ -49,7 +49,7 @@ const Giscus = () => {
     script.setAttribute('crossorigin', 'anonymous')
     script.async = true
 
-    ref.current.appendChild(script);
+    ref.current.appendChild(script)
   }, [])
 
   // Reload on theme change
