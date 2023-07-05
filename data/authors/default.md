@@ -1,6 +1,6 @@
 ---
 name: WONTAE JUN
-avatar: /static/images/profile.png
+avatar: /static/images/profile.jpg
 occupation: Studying development
 company: Looking for a job now.
 email: jwt3493@naver.com
