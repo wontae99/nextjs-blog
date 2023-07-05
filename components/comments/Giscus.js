@@ -1,12 +1,13 @@
-import React, { useState, useEffect, useCallback } from 'react'
+import React, { useState, useEffect, useCallback, useRef } from 'react'
 import { useTheme } from 'next-themes'
 import { useRouter } from 'next/router'
 
 import siteMetadata from '@/data/siteMetadata'
 
 const Giscus = () => {
+  const ref = useRef<HTMLDivElement>(null);
   const router = useRouter()
-  const [enableLoadComments, setEnabledLoadComments] = useState(true)
+
   const { theme, resolvedTheme } = useTheme()
   const commentsTheme =
     siteMetadata.comment.giscusConfig.themeURL === ''
@@ -17,8 +18,8 @@ const Giscus = () => {
 
   const COMMENTS_ID = 'comments-container'
 
-  const LoadComments = useCallback(() => {
-    setEnabledLoadComments(false)
+  useEffect(() => {
+    if (!ref.current || ref.current.hasChildNodes()) return;
 
     const {
       repo,
@@ -34,6 +35,7 @@ const Giscus = () => {
 
     const script = document.createElement('script')
     script.src = 'https://giscus.app/client.js'
+    scriptElem.async = true;
     script.setAttribute('data-repo', repo)
     script.setAttribute('data-repo-id', repositoryId)
     script.setAttribute('data-category', category)
@@ -71,7 +73,7 @@ const Giscus = () => {
   // }, [LoadComments])
 
   return (
-    <div className="pt-6 pb-6 text-center text-gray-700 dark:text-gray-300">
+    <div ref={ref} className="pt-6 pb-6 text-center text-gray-700 dark:text-gray-300">
       {/* {enableLoadComments && <button onClick={LoadComments}>Load Comments</button>} */}
       <div className="giscus w-full" id={COMMENTS_ID} />
     </div>
