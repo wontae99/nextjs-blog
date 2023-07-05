@@ -25,7 +25,7 @@ const Comments = ({ frontMatter }) => {
   if (!comment || Object.keys(comment).length === 0) return <></>
   return (
     <div id="comment">
-      {<GiscusComponent />}
+      {siteMetadata.comment && siteMetadata.comment.provider === 'giscus' && <GiscusComponent />}
       {siteMetadata.comment && siteMetadata.comment.provider === 'utterances' && (
         <UtterancesComponent />
       )}

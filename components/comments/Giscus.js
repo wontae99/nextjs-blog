@@ -54,7 +54,7 @@ const Giscus = () => {
 
   // Reload on theme change
   useEffect(() => {
-    const iframe = document.querySelector < HTMLIFrameElement > 'iframe.giscus-frame'
+    const iframe = document.querySelector('iframe.giscus-frame')
     iframe?.contentWindow?.postMessage(
       { giscus: { setConfig: { term: router.asPath, theme } } },
       'https://giscus.app'
