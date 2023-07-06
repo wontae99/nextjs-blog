@@ -1,19 +1,18 @@
-import React, { useState, useEffect, useCallback } from 'react'
-import { useTheme } from 'next-themes'
-
 import siteMetadata from '@/data/siteMetadata'
 
-const Giscus = () => {
-  const [enableLoadComments, setEnabledLoadComments] = useState(true)
-  const { theme, resolvedTheme } = useTheme()
-  const commentsTheme =
-    siteMetadata.comment.giscusConfig.themeURL === ''
-      ? theme === 'dark' || resolvedTheme === 'dark'
-        ? siteMetadata.comment.giscusConfig.darkTheme
-        : siteMetadata.comment.giscusConfig.theme
-      : siteMetadata.comment.giscusConfig.themeURL
+import { useRouter } from 'next/router'
+import { useTheme } from 'next-themes'
+import { useEffect, useRef, useState } from 'react'
 
-  const COMMENTS_ID = 'comments-container'
+export default function Giscus() {
+  const ref = useRef(null)
+  const { resolvedTheme } = useTheme()
+  const [mounted, setMounted] = useState(false)
+  const router = useRouter()
+
+  // https://github.com/giscus/giscus/tree/main/styles/themes
+  const theme = resolvedTheme === 'dark' ? 'dark' : 'light'
+
   const {
     repo,
     repositoryId,
@@ -26,47 +25,45 @@ const Giscus = () => {
     lang,
   } = siteMetadata?.comment?.giscusConfig
 
-  const LoadComments = useCallback(() => {
-    setEnabledLoadComments(false)
+  useEffect(() => {
+    if (!ref.current || ref.current.hasChildNodes()) return
 
-    const script = document.createElement('script')
-    script.src = 'https://giscus.app/client.js'
-    script.setAttribute('data-repo', repo)
-    script.setAttribute('data-repo-id', repositoryId)
-    script.setAttribute('data-category', category)
-    script.setAttribute('data-category-id', categoryId)
-    script.setAttribute('data-mapping', mapping)
-    script.setAttribute('data-reactions-enabled', reactions)
-    script.setAttribute('data-emit-metadata', metadata)
-    script.setAttribute('data-input-position', inputPosition)
-    script.setAttribute('data-lang', lang)
-    script.setAttribute('data-theme', commentsTheme)
-    script.setAttribute('crossorigin', 'anonymous')
-    script.async = true
+    const scriptElem = document.createElement('script')
+    scriptElem.src = 'https://giscus.app/client.js'
+    scriptElem.async = true
+    scriptElem.crossOrigin = 'anonymous'
 
-    const comments = document.getElementById(COMMENTS_ID)
-    if (comments) comments.appendChild(script)
+    scriptElem.setAttribute('data-repo', repo)
+    scriptElem.setAttribute('data-repo-id', repositoryId)
+    scriptElem.setAttribute('data-category', category)
+    scriptElem.setAttribute('data-category-id', categoryId)
+    scriptElem.setAttribute('data-mapping', mapping)
+    scriptElem.setAttribute('data-strict', '0')
+    scriptElem.setAttribute('data-reactions-enabled', reactions)
+    scriptElem.setAttribute('data-emit-metadata', metadata)
+    scriptElem.setAttribute('data-input-position', inputPosition)
+    scriptElem.setAttribute('data-theme', theme)
+    scriptElem.setAttribute('data-lang', lang)
 
-    return () => {
-      const comments = document.getElementById(COMMENTS_ID)
-      if (comments) comments.innerHTML = ''
-    }
-  }, [commentsTheme])
+    ref.current.appendChild(scriptElem)
+    setMounted(true)
+  }, [])
 
-  // Reload on theme change
+  // https://github.com/giscus/giscus/blob/main/ADVANCED-USAGE.md#isetconfigmessage
+  useEffect(() => {
+    if (!mounted) return
+
+    const iframe = document.querySelector('iframe.giscus-frame')
+    iframe?.contentWindow?.postMessage({ giscus: { setConfig: { theme } } }, 'https://giscus.app')
+  }, [theme, mounted])
 
   useEffect(() => {
     const iframe = document.querySelector('iframe.giscus-frame')
-    if (!iframe) return
-    LoadComments()
-  }, [LoadComments])
+    iframe?.contentWindow?.postMessage(
+      { giscus: { setConfig: { term: router.asPath } } },
+      'https://giscus.app'
+    )
+  }, [router.asPath])
 
-  return (
-    <div className="pt-6 pb-6 text-center text-gray-700 dark:text-gray-300">
-      {enableLoadComments && <button onClick={LoadComments}>Load Comments</button>}
-      <div className="giscus w-full" id={COMMENTS_ID} />
-    </div>
-  )
+  return <section ref={ref} />
 }
-
-export default Giscus
