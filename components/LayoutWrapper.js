@@ -1,3 +1,5 @@
+const { motion } = require('framer-motion')
+
 import siteMetadata from '@/data/siteMetadata'
 import headerNavLinks from '@/data/headerNavLinks'
 import Link from './Link'
@@ -11,7 +13,7 @@ const LayoutWrapper = ({ children }) => {
     <SectionContainer>
       <div className="flex h-screen flex-col justify-between">
         <header className="flex items-center justify-between py-10">
-          <div>
+          <motion.div className='rounded-lg p-2' whileHover={{ backgroundColor: "rgb(20 184 166)" }}>
             <Link href="/" aria-label={siteMetadata.headerTitle}>
               <div className="flex items-center justify-between">
                 {typeof siteMetadata.headerTitle === 'string' ? (
@@ -23,17 +25,19 @@ const LayoutWrapper = ({ children }) => {
                 )}
               </div>
             </Link>
-          </div>
+          </motion.div>
+
           <div className="flex items-center text-base leading-5">
             <div className="hidden sm:block">
               {headerNavLinks.map((link) => (
-                <Link
+                <motion.a
                   key={link.title}
                   href={link.href}
-                  className="p-1 font-medium text-gray-900 dark:text-gray-100 sm:p-4"
+                  className="rounded-lg p-1 font-medium text-gray-900 dark:text-gray-100 sm:m-2 sm:p-2"
+                  whileHover={{ backgroundColor: '#595959' }}
                 >
                   {link.title}
-                </Link>
+                </motion.a>
               ))}
             </div>
             <ThemeSwitch />

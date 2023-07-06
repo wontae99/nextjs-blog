@@ -1,19 +1,21 @@
 const projectsData = [
   {
-    title: 'A Search Engine',
-    description: `What if you could look up any information in the world? Webpages, images, videos
-    and more. Google has many features to help you find exactly what you're looking
-    for.`,
-    imgSrc: '/static/images/google.png',
-    href: 'https://www.google.com',
+    title: 'WONCHA',
+    description: `Movie/Drama Recommendation Web application powered by Next.js, tailwind.css`,
+    imgSrc: '/static/images/projects/woncha.png',
+    href: 'https://github.com/wontae99/nextjs-movie-project',
   },
   {
-    title: 'The Time Machine',
-    description: `Imagine being able to travel back in time or to the future. Simple turn the knob
-    to the desired date and press "Go". No more worrying about lost keys or
-    forgotten headphones with this simple yet affordable solution.`,
-    imgSrc: '/static/images/time-machine.jpg',
-    href: '/blog/the-time-machine',
+    title: 'WONSCORD',
+    description: `React-Native chat app cloning discord ui/ux.`,
+    imgSrc: '/static/images/projects/wonscord.png',
+    href: 'https://github.com/wontae99/chat-app',
+  },
+  {
+    title: 'Mobile WONCHA',
+    description: `React-Native WONCHA`,
+    imgSrc: '/static/images/projects/wonchaM.png',
+    href: 'https://github.com/wontae99/woncha-RN',
   },
 ]
 

@@ -2,7 +2,7 @@ const siteMetadata = {
   title: "Wontae's Blog",
   author: 'WONTAE99',
   headerTitle: "WONTAE'S BLOG",
-  description: 'A blog created with Next.js and Tailwind.css',
+  description: '나의 개발 일기🙂',
   language: 'en-us',
   theme: 'system', // system, dark or light
   siteUrl: 'https://nextjs-blog-wontae99.vercel.app',
@@ -13,9 +13,10 @@ const siteMetadata = {
   email: 'address@yoursite.com',
   github: 'https://github.com/wontae99',
   twitter: 'https://twitter.com/wontae99',
-  facebook: 'https://facebook.com',
+  facebook: 'https://www.facebook.com/wontae.joen/',
   youtube: 'https://youtube.com',
   linkedin: 'https://www.linkedin.com',
+  instagram: 'https://www.instagram.com/wontae.jeon/',
   locale: 'en-US',
   analytics: {
     // If you want to use an analytics provider you have to add it to the

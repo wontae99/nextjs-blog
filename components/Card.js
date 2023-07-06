@@ -1,8 +1,10 @@
+const { motion } = require('framer-motion')
+
 import Image from './Image'
 import Link from './Link'
 
 const Card = ({ title, description, imgSrc, href }) => (
-  <div className="md p-4 md:w-1/2" style={{ maxWidth: '544px' }}>
+  <motion.div className="lg p-4 lg:w-1/3" style={{ maxWidth: '544px' }} whileHover={{ y: -10 }}>
     <div
       className={`${
         imgSrc && 'h-full'
@@ -50,7 +52,7 @@ const Card = ({ title, description, imgSrc, href }) => (
         )}
       </div>
     </div>
-  </div>
+  </motion.div>
 )
 
 export default Card

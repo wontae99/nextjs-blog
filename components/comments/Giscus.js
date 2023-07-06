@@ -1,17 +1,24 @@
-import siteMetadata from '@/data/siteMetadata'
-
 import { useRouter } from 'next/router'
 import { useTheme } from 'next-themes'
 import { useEffect, useRef, useState } from 'react'
 
+import siteMetadata from '@/data/siteMetadata'
+
 export default function Giscus() {
   const ref = useRef(null)
-  const { resolvedTheme } = useTheme()
+
+  const { theme, resolvedTheme } = useTheme()
+  const commentsTheme =
+    siteMetadata.comment.giscusConfig.themeURL === ''
+      ? theme === 'dark' || resolvedTheme === 'dark'
+        ? siteMetadata.comment.giscusConfig.darkTheme
+        : siteMetadata.comment.giscusConfig.theme
+      : siteMetadata.comment.giscusConfig.themeURL
+
   const [mounted, setMounted] = useState(false)
   const router = useRouter()
 
   // https://github.com/giscus/giscus/tree/main/styles/themes
-  const theme = resolvedTheme === 'dark' ? 'dark' : 'light'
 
   const {
     repo,
@@ -33,16 +40,17 @@ export default function Giscus() {
     scriptElem.async = true
     scriptElem.crossOrigin = 'anonymous'
 
-    scriptElem.setAttribute('data-repo', repo)
-    scriptElem.setAttribute('data-repo-id', repositoryId)
-    scriptElem.setAttribute('data-category', category)
-    scriptElem.setAttribute('data-category-id', categoryId)
-    scriptElem.setAttribute('data-mapping', mapping)
+    scriptElem.setAttribute('data-repo', 'wontae99/wontae99-blog')
+    scriptElem.setAttribute('data-repo-id', 'R_kgDOJ3i8_A')
+    scriptElem.setAttribute('data-category', 'General')
+    scriptElem.setAttribute('data-category-id', 'DIC_kwDOJ3i8_M4CXsr7')
+    scriptElem.setAttribute('data-mapping', 'pathname')
     scriptElem.setAttribute('data-strict', '0')
-    scriptElem.setAttribute('data-reactions-enabled', reactions)
-    scriptElem.setAttribute('data-emit-metadata', metadata)
-    scriptElem.setAttribute('data-input-position', inputPosition)
-    scriptElem.setAttribute('data-theme', theme)
+    scriptElem.setAttribute('data-reactions-enabled', '1')
+    scriptElem.setAttribute('data-emit-metadata', '1')
+    scriptElem.setAttribute('data-input-position', 'top')
+    scriptElem.setAttribute('data-loading', 'lazy')
+    scriptElem.setAttribute('data-theme', commentsTheme)
     scriptElem.setAttribute('data-lang', lang)
 
     ref.current.appendChild(scriptElem)
@@ -65,5 +73,5 @@ export default function Giscus() {
     )
   }, [router.asPath])
 
-  return <section ref={ref} />
+  return <section ref={ref} className="container my-5" />
 }
