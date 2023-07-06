@@ -71,12 +71,13 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
                       <div className="space-y-3 xl:col-span-3">
                         <div>
                           <h3 className="text-2xl font-bold leading-8 tracking-tight">
-                            <Link
+                            <motion.a
                               href={`/blog/${slug}`}
                               className="text-gray-900 dark:text-gray-100"
+                              whileHover={{ textShadow: '0 0px 20px rgb(245 158 11)' }}
                             >
                               {title}
-                            </Link>
+                            </motion.a>
                           </h3>
                           <div className="flex flex-wrap">
                             {tags.map((tag) => (
@@ -95,6 +96,9 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
             </ul>
           </motion.div>
         </div>
+        {pagination && pagination.totalPages > 1 && !searchValue && (
+          <Pagination currentPage={pagination.currentPage} totalPages={pagination.totalPages} />
+        )}
       </motion.section>
     </>
   )

@@ -51,12 +51,13 @@ export default function Home({ posts }) {
                           <div className="space-y-6">
                             <div>
                               <h2 className="text-2xl font-bold leading-8 tracking-tight">
-                                <Link
+                                <motion.a
                                   href={`/blog/${slug}`}
                                   className="text-gray-900 dark:text-gray-100"
+                                  whileHover={{ textShadow: '0 0px 20px rgb(245 158 11)' }}
                                 >
                                   {title}
-                                </Link>
+                                </motion.a>
                               </h2>
                               <div className="flex flex-wrap">
                                 {tags.map((tag) => (

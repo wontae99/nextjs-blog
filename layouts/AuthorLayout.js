@@ -2,7 +2,6 @@ const { motion } = require('framer-motion')
 import {
   staggerHalf,
   fadeInHalf,
-  fadeInScale,
   fadeInSlideToLeft,
   fadeInSlideToRight,
 } from 'constants/animation'
