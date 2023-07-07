@@ -11,6 +11,6 @@ github: https://github.com/wontae99
 
 Graduated from Electric Engineering of SoogSil Univ. (2015.03 ~ 2022.03)
 
-Studying development. (especially front-end)
+Studying development.
 
 Tech Stack: Python, Javascript, React, React-Native, NextJS, MongoDB, Typescript.
