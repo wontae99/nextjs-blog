@@ -6,9 +6,9 @@ draft: false
 summary: Git 공부하기 3편 - merge
 ---
 
+## **git merge**
 
-## __git merge__
-```git
+```
 git merge
 ```
 
@@ -16,49 +16,54 @@ git merge
 
 ## `Fast-Forward` 병합
 
-간단히 말해서 
+간단히 말해서
 `Fast-forward` 방식은, 병합에 사용되는 branch가 병합하려는 branch의 모든 커밋내역을 가지고
 있다면 병합 할 때 단순하게 커밋이 이동된다.
 
+**`merge`의 기본적인 workflow**
 
-__`merge`의 기본적인 workflow__  <br/>
+<br/>
 1. 최종적으로 병합하길 원하는(기준점이 되는) 브랜치로 이동.
 2. `git merge <name>` 명령어를 통해 병합하고 싶은 브랜치와 병합.
 
 > Example
 
 master 브랜치에 bugfix 브랜치와 병합을 하고 싶다면?
-```git
+
+```
 git switch master
 git merge bugfix
 ```
+
 이렇게 하면 `bugfix` 브랜치에 `commit`된 변경사항들이 `master`브랜치에 병합된다.
 
 ![fast-forward](https://github.com/wontae99/wontae99-blog/assets/109476712/269cabff-2682-4c32-9b68-7e8875efb718)
 
-<center>⬇️</center> <br/>
+⬇️
 
 ![result-ff](https://github.com/wontae99/wontae99-blog/assets/109476712/96be50c2-dd2b-4847-ad87-bbcce09332b6)
 
-<br/>
+<br />
 
 ## `Fast-Forward` 병합이 아닌 경우는?
 
-![image](https://github.com/wontae99/wontae99-blog/assets/109476712/f2797d67-b680-4b63-9621-da29c4eba2c0)
+![non-fast-forward-merge](https://github.com/wontae99/wontae99-blog/assets/109476712/f2797d67-b680-4b63-9621-da29c4eba2c0)
 
 위의 사진 처럼 `master`브랜치와 `bugfix`브랜치 각각에 커밋이 존재할때, 단순히 `fast-forward`병합이 되지 않는다.
 
-이런 경우 `git` 에서 `merge` 커밋 할때 커밋 메시지를 요구한다. 
+이런 경우 `git` 에서 `merge` 커밋 할때 커밋 메시지를 요구한다.
 
-<br/>
+<br />
 
 ## 병합시 충돌이 발생할땐? 💥
 
 병합하고자 하는 변경된 파일안에서 충돌이 일어나게되면 다음과 같은 메시지가 뜰것이다.
-```git
+
+```
 CONFLICT(content): Merge conflict in blah.txt
 Automatic merge failed; ...
 ```
+
 이때 단계적으로 충돌이 발생하는 파일에서 해결하면 된다.
 
 1. merge conflict가 발생하는 파일을 연다.
