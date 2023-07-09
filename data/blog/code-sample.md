@@ -2,7 +2,7 @@
 title: Sample .md file
 date: '2023-07-06'
 tags: ['markdown', 'code', 'features']
-draft: false
+draft: true
 summary: Example of a markdown file with code blocks and syntax highlighting
 ---
 
