@@ -3,7 +3,7 @@ title: Git 공부하기 (1)
 date: '2023-07-09'
 tags: ['Git', 'Github']
 draft: false
-summary: Gi 공부하기
+summary: Git 공부하기
 ---
 
 # 개요
