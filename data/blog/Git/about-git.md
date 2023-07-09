@@ -3,7 +3,7 @@ title: Git 공부하기 (1)
 date: '2023-07-09'
 tags: ['Git', 'Github']
 draft: false
-summary: Git 공부하기
+summary: Git 공부하기 - status, init, add, commit, log
 ---
 
 # 개요
@@ -60,10 +60,10 @@ gitignore 규칙 ➡️ [.gitignore rule](https://wontae99.vercel.app/blog/Git/g
 
 ```git
 git commit -m "message"
-
+git commit -a -m "message"
 ```
 
-스테이지된 변경들을 모두 commit해줌. <br />
+`git commit -a -m "message"` 는 모든 변경 사항들을 스테이징 함과 동시에 커밋해주는 명령어이다.
 __Tip!  ✨Atomic commit✨을 해라!__ <br />
 변경된 파일들을 한번에 `add`후 `commit`하기 보다 변경된 __목적, 특징 등에 따라서__ 하나씩 `commit`하는 습관을 들일것!
 나중에 변경점들을 rollback하거나 undo해야될때 좀 더 쉬워짐. 또한, 다른 사람들과 협업할때 코드 리뷰하기 용이함.
@@ -77,6 +77,8 @@ git log --oneline
 ```
 `git log`로 Author, 날짜, commit 메시지 등을 확인할 수있음. `git log --oneline`으로 더 짧은 로그로 확인 가능. <kbd>q</kbd> 키를 눌러 exit할 수 있다.
 
+* __log에 뜨는 `(HEAD -> main)`은 무엇일까?__
+`HEAD`는 단순히 repository에서 현재 location을 지칭하는 `포인터`이다. 즉, `(HEAD -> main)`는 `HEAD`가 `main` 브랜치를 지칭한다는 뜻이다. 
 
 ## Git의 기본적인 workflow
 
