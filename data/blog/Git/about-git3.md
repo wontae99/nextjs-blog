@@ -1,9 +1,9 @@
 ---
-title: Git 공부하기 (2)
-date: '2023-07-09'
+title: Git 공부하기 (3)
+date: '2023-07-10'
 tags: ['Git', 'Github']
 draft: false
-summary: Git 공부하기 2편 - merge
+summary: Git 공부하기 3편 - merge
 ---
 
 
