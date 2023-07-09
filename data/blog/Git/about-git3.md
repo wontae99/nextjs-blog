@@ -21,7 +21,7 @@ git merge
 있다면 병합 할 때 단순하게 커밋이 이동된다.
 
 
-__`merge`의 기본적인 workflow__ <br/>
+__`merge`의 기본적인 workflow__  <br/>
 1. 최종적으로 병합하길 원하는(기준점이 되는) 브랜치로 이동.
 2. `git merge <name>` 명령어를 통해 병합하고 싶은 브랜치와 병합.
 
@@ -36,7 +36,7 @@ git merge bugfix
 
 ![fast-forward](https://github.com/wontae99/wontae99-blog/assets/109476712/269cabff-2682-4c32-9b68-7e8875efb718)
 
-<p style="text-align: center;">⬇️</p>
+<center>⬇️</center> <br/>
 
 ![result-ff](https://github.com/wontae99/wontae99-blog/assets/109476712/96be50c2-dd2b-4847-ad87-bbcce09332b6)
 
