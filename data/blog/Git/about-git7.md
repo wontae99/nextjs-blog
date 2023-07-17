@@ -1,9 +1,9 @@
 ---
-title: Git 공부하기 (6)
-date: '2023-07-16'
+title: Git 공부하기 (7)
+date: '2023-07-17'
 tags: ['Git', 'Github']
 draft: false
-summary: Git 공부하기 6편 - Semantic Versioning, tag
+summary: Git 공부하기 7편 - Semantic Versioning, tag
 ---
 
 # Semantic Versioning
