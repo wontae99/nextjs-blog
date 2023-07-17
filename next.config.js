@@ -18,7 +18,7 @@ const withMDX = require('@next/mdx')({
 // You might need to insert additional domains in script-src if you are using external services
 const ContentSecurityPolicy = `
   default-src 'self';
-  script-src 'self' 'unsafe-eval' 'unsafe-inline' giscus.app;
+  script-src 'self' 'unsafe-eval' 'unsafe-inline' giscus.app https://www.googletagmanager.com https://plausible.io;
   style-src 'self' 'unsafe-inline';
   img-src * blob: data:;
   media-src 'none';
