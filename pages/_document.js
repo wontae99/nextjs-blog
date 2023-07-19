@@ -19,6 +19,10 @@ class MyDocument extends Document {
           />
           <link rel="manifest" href="/static/favicons/site.webmanifest" />
           <link rel="mask-icon" href="/static/favicons/safari-pinned-tab.svg" color="#5bbad5" />
+          {/* PAGE SEO */}
+          <meta name="google-site-verification" content="YfVK_O-Hokf-Rz5EgsuWXcah1QBya6W_dD3uIHS-HNo" />
+          <meta name="naver-site-verification" content="7f3847100284a64c0308e35ff35570d557359279" />
+
           <meta name="msapplication-TileColor" content="#000000" />
           <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fff" />
           <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000" />
