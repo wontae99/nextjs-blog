@@ -2,7 +2,7 @@
 title: ABOUT SEO
 date: '2023-07-26'
 tags: ['SEO']
-draft: true
+draft: false
 summary: RESTful API 정의
 ---
 
