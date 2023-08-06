@@ -3,7 +3,7 @@ const projectsData = [
     title: 'WONCHA',
     description: `Movie/Drama Recommendation Web application powered by Next.js, tailwind.css`,
     imgSrc: '/static/images/projects/woncha.png',
-    href: 'https://github.com/wontae99/nextjs-movie-project',
+    href: 'https://github.com/wontae99/woncha-typescript',
   },
   {
     title: 'WONSCORD',
