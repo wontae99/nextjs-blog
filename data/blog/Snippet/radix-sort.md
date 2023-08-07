@@ -1,7 +1,7 @@
 ---
 title: Radix Sort(기수 정렬)
 date: '2023-08-06'
-tags: ['snippet', 'code']
+tags: ['snippet', 'code', 'algorithm']
 draft: false
 summary: radix sort
 ---
