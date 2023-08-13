@@ -1,9 +1,9 @@
 ---
-title: Sorting Algorithm - 합병, 퀵, 지수 정렬
+title: Sorting Algorithm - 합병, 퀵, 기수 정렬
 date: '2023-08-12'
 tags: ['snippet', 'code', 'algorithm']
 draft: false
-summary: sorting algorithm - merge sort, quick sort,
+summary: sorting algorithm - merge sort, quick sort, radix sort
 ---
 
 # 합병 정렬(Merge Sort)
