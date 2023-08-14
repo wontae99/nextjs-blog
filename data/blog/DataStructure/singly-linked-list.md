@@ -1,7 +1,7 @@
 ---
 title: Singly Linked List(단일 연결 리스트)
 date: '2023-08-13'
-tags: ['snippet', 'code', 'algorithm', 'data structure']
+tags: ['snippet', 'CS', 'algorithm', 'data structure']
 draft: false
 summary: singly linked list 정의 및 코드 구현
 ---
