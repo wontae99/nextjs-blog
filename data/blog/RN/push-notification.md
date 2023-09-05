@@ -203,8 +203,9 @@ useEffect(() => {
 # 구현
 
 - 디바이스
-  
-![notif-test](https://github.com/wontae99/woncha-typescript/assets/109476712/4233333f-43ba-4e8b-a5b4-362d2bf94c98)
+
+![notif-test](https://github.com/wontae99/RN-push-alarm/assets/109476712/138f8a26-bf9e-47ba-ae79-d01ebd006cc1)
+
 
 
 - 콘솔 창
