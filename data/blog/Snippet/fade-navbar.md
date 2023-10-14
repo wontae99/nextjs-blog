@@ -46,3 +46,11 @@ export default function NavBar() {
   return <nav className={`${showNav ? 'opacity-100' : 'opacity-0'}`}>...</nav>
 }
 ```
+
+<br/><br/>
+
+## 결과
+
+`css` transition을 추가하여 부드럽게 전환하도록 하였다!
+
+![nav-bar-scroll-event](https://github.com/wontae99/wontae99-blog/assets/109476712/b9caedc4-6ed0-4ba6-857f-e8fffbf51db7)
