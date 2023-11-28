@@ -2,7 +2,7 @@
 title: Threejs 공부하기 (R3F) - (1)
 date: '2023-11-26'
 tags: ['Threejs', "R3F"]
-draft: true
+draft: false
 summary: 3D 웹 개발 공부 - Three.js, React Three Fiber
 ---
 
@@ -12,13 +12,13 @@ summary: 3D 웹 개발 공부 - Three.js, React Three Fiber
 
 포폴 사이트를 만들면서 3D 웹 개발에 더 흥미를 갖게되어 공부해 보기로 했다!
 
-</br>
+<br/>
 
 ## DEMO
 
  https://r3f-practice.vercel.app/
 
-</br>
+<br/>
 
 # 3D 웹 개발 요소
 
@@ -28,7 +28,7 @@ summary: 3D 웹 개발 공부 - Three.js, React Three Fiber
 
 그리고 프론트엔드 개발에 있어 가장 많이 사용되는 라이브러리는 **React** 이다. 앞서 말한 Three.js를 React에서 사용하기 위해서는 **R3F(React Three Fiber)** 라는 라이브러리를 사용하면 된다.
 
-</br></br>
+<br/><br/>
 
 ## Canvas
 
@@ -44,7 +44,7 @@ Canvas를 구성하는 요소는 크게 3가지이다.
 
 R3F는 캔버스를 생성할때, 자동으로 이 3개의 객체를 자동으로 생성해 준다.
 
-</br>
+<br/>
 
 ## Transformation
 
@@ -149,7 +149,7 @@ export default MyGeometry;
 이외 geometry에 대한 자세한 내용은 [ThreeJS Docs](https://threejs.org/docs/index.html#api/en/geometries/BoxGeometry)를 참고하면 볼 수 있다.
 
 
-</br></br>
+<br/><br/>
 
 ## Material
 
