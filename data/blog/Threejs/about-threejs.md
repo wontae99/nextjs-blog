@@ -16,6 +16,12 @@ summary: 3D 웹 개발 공부 - Three.js, React Three Fiber
 
 </br>
 
+## DEMO
+
+ https://r3f-practice.vercel.app/
+
+</br>
+
 # 3D 웹 개발 요소
 
 3D 웹 개발은 우선 웹 표준 기술인 **WebGL** 과 **WebGPU** 을 사용한다. 하지만 WebGL과 WebGPU는 매우 복잡하고 어렵다. 출력을 위한 파이프라인과 수학적인 내용 그리고 **shader** 라고하는 새로운 프로그래밍 언어인 GLSL과 WGSL을 알아야 한다🤯
