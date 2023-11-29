@@ -41,7 +41,7 @@ const securityHeaders = [
   // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options
   {
     key: 'X-Frame-Options',
-    value: 'DENY',
+    value: 'SAMEORIGIN',
   },
   // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options
   {
@@ -71,7 +71,7 @@ const nextConfig = {
   // Optionally, add any other Next.js config below
   reactStrictMode: true,
 }
- 
+
 // Merge MDX config with Next.js config
 module.exports = withMDX(nextConfig)
 
