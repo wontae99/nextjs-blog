@@ -3,7 +3,7 @@ title: Threejs 공부하기 (R3F) - (1)
 date: '2023-11-26'
 tags: ['Threejs', "R3F"]
 draft: false
-summary: 3D 웹 개발 공부 - Three.js, React Three Fiber
+summary: 3D 웹 개발 공부 - Three.js, React Three Fiber(R3F) - Canvas, Transformation, Geometry
 ---
 
 얼마전 개인 포트폴리오 사이트를 만들면서 처음으로 three.js를 사용해 3D 요소가 포함된 웹 어플리케이션을 개발해 보았다.
