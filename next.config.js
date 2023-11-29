@@ -41,7 +41,7 @@ const securityHeaders = [
   // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options
   {
     key: 'X-Frame-Options',
-    value: 'SAMEORIGIN',
+    value: 'ALLOW-FROM SAMEDOMAIN, r3f-practice.vercel.app',
   },
   // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options
   {
