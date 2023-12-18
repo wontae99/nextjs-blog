@@ -1,6 +1,6 @@
 ---
 title: [공부📖] 파이썬 코딩의 기술#1 - 파이썬 다운 생각
-date: '2023-12-17'
+date: '2023-12-18'
 tags: ['Python']
 draft: false
 summary: 파이썬 코딩의 기술 읽고 파이썬 공부하기 🐍
